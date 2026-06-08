@@ -36,6 +36,61 @@ const App = () => {
           </nav>
         </div>
       </header>
+	<section className="mx-auto max-w-6xl px-4 py-10 md:px-6">
+	<div className="grid gap-8 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:items-center">
+  <div className="overflow-hidden rounded-3xl border border-slate-800/80 bg-slate-950/60 shadow-xl shadow-black/70">
+    <img
+      src={overhaulImage}
+      alt="CADAON overhaul in progress"
+      className="w-full object-cover"
+    />
+  </div>
+
+  <div className="rounded-3xl border border-slate-800/80 bg-slate-950/70 p-6 shadow-xl shadow-black/60">
+    <div className="mb-6">
+      <div className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-accent-gold">
+        🇬🇧 Platform Update
+      </div>
+      <h2 className="mb-3 text-2xl font-semibold text-slate-100">
+        Overhaul in Progress
+      </h2>
+      <p className="mb-3 text-sm text-slate-300">
+        We're currently restructuring our membership tiers, content organization, and platform infrastructure.
+      </p>
+      <p className="mb-3 text-sm text-slate-300">
+        Some features, files, and resources may be temporarily unavailable while new data is being uploaded and synchronized.
+      </p>
+      <p className="mb-3 text-sm font-semibold text-accent-gold">
+        Overhauled tiers are coming before July 4th.
+      </p>
+      <p className="text-sm text-slate-400">
+        Thank you for your patience.
+      </p>
+    </div>
+
+    <div className="border-t border-slate-800 pt-6">
+      <div className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-accent-gold">
+        🇱🇹 Platformos atnaujinimas
+      </div>
+      <h2 className="mb-3 text-2xl font-semibold text-slate-100">
+        Vyksta restruktūrizacija
+      </h2>
+      <p className="mb-3 text-sm text-slate-300">
+        Šiuo metu pertvarkome narystės planus, turinio struktūrą ir platformos infrastruktūrą.
+      </p>
+      <p className="mb-3 text-sm text-slate-300">
+        Dalis funkcijų, failų ar resursų gali būti laikinai nepasiekiami, kol vyksta naujų duomenų įkėlimas ir sinchronizacija.
+      </p>
+      <p className="mb-3 text-sm font-semibold text-accent-gold">
+        Atnaujinti narystės planai: iki liepos 4 d.
+      </p>
+      <p className="text-sm text-slate-400">
+        Ačiū už kantrybę.
+      </p>
+	 </div>
+	</div>
+  </div>
+</section>
 
       {/* Main content */}
       <main className="mx-auto flex max-w-6xl flex-col gap-16 px-4 py-10 md:px-6 md:py-16">
