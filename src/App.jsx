@@ -1,3 +1,4 @@
+import overhaulImage from "./assets/overhaul_2026_new_tiers.png";
 import React from "react";
 import cadaonLogo from "./assets/cadaon-logo-827.png";
 import cadaonWallpaper from "./assets/cadaon-wallpaper-3200.png";
