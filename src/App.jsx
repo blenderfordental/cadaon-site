@@ -1,4 +1,5 @@
 import overhaulImage from "./assets/overhaul_2026_new_tiers.png";
+import faat3dCover from "./assets/FAAT3D_Proverzis_EPIC_COVER.jpg";
 import React from "react";
 import cadaonLogo from "./assets/cadaon-logo-827.png";
 import cadaonWallpaper from "./assets/cadaon-wallpaper-3200.png";
@@ -91,7 +92,56 @@ const App = () => {
 	</div>
   </div>
 </section>
+{/* FAAT3D feature */}
+<section className="border-b border-slate-800/80 bg-black/60">
+  <div className="mx-auto max-w-6xl px-4 py-10 md:px-6">
+    <div className="grid gap-8 overflow-hidden rounded-3xl border border-slate-800/80 bg-slate-950/70 shadow-xl shadow-black/70 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:items-center">
+      <div className="overflow-hidden">
+        <img
+          src={faat3dCover}
+			alt="FAAT3D: Proveržis"
+			className="h-full w-full object-cover"
+        />
+      </div>
 
+      <div className="p-6 md:p-8">
+        <div className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-accent-gold">
+          Special Project
+        </div>
+
+        <h2 className="mb-4 text-3xl font-semibold tracking-tight text-slate-100 md:text-4xl">
+          FAAT3D:{" "}
+          <span className="bg-gradient-to-r from-accent-gold via-amber-300 to-accent-redhot bg-clip-text text-transparent">
+            PROVERŽIS
+          </span>
+        </h2>
+
+        <p className="mb-4 text-sm text-slate-300 md:text-base">
+          Pilno metro techno-dokumentika apie skaitmeninės odontologijos transformaciją,
+          tikslumą, neapibrėžtumą ir 3D duomenų revoliuciją.
+        </p>
+
+        <p className="mb-4 text-sm text-slate-300 md:text-base">
+          Projektas skirtas odontologams, dantų technikams ir visiems, kuriuos
+          domina technologijų poveikis šiuolaikinei medicinai.
+        </p>
+
+        <p className="mb-6 text-xs uppercase tracking-[0.22em] text-slate-400">
+          Techno-documentary · Digital dentistry · Precision · Uncertainty
+        </p>
+
+        <a
+          href="https://faat3d.com"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center justify-center rounded-xl border border-accent-gold/80 bg-gradient-to-r from-accent-gold to-accent-redhot px-5 py-2 text-sm font-semibold text-black shadow-lg shadow-accent-redhot/40 transition hover:brightness-110"
+        >
+          Aplankyti FAAT3D.COM
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
       {/* Main content */}
       <main className="mx-auto flex max-w-6xl flex-col gap-16 px-4 py-10 md:px-6 md:py-16">
         {/* Hero section */}
