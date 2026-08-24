@@ -1,15 +1,116 @@
 import overhaulImage from "./assets/overhaul_2026_new_tiers.png";
 import faat3dCover from "./assets/FAAT3D_Proverzis_EPIC_COVER.jpg";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import cadaonLogo from "./assets/cadaon-logo-827.png";
 import cadaonWallpaper from "./assets/cadaon-wallpaper-3200.png";
 import cadaonLoop from "./assets/cadaon-loop.mp4";
 import faat3dPromo from "./assets/FAAT3D_Proverzis_LT_promo3.jpg";
+import ambientMusic from "./assets/Midnight_Factory_Hum_Alpha.mp3";
 
 const App = () => {
+	  const audioRef = useRef(null);
+  const fadeTimerRef = useRef(null);
+
+  const [musicOn, setMusicOn] = useState(false);
+  const [autoplayBlocked, setAutoplayBlocked] = useState(false);
+
+  const stopFade = () => {
+    if (fadeTimerRef.current) {
+      clearInterval(fadeTimerRef.current);
+      fadeTimerRef.current = null;
+    }
+  };
+
+  const fadeTo = (targetVolume, duration = 1500, onComplete) => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    stopFade();
+
+    const startVolume = audio.volume;
+    const steps = 30;
+    const stepTime = duration / steps;
+    let step = 0;
+
+    fadeTimerRef.current = setInterval(() => {
+      step += 1;
+
+      const progress = step / steps;
+      const nextVolume =
+        startVolume + (targetVolume - startVolume) * progress;
+
+      audio.volume = Math.max(0, Math.min(1, nextVolume));
+
+      if (step >= steps) {
+        stopFade();
+        audio.volume = targetVolume;
+
+        if (onComplete) {
+          onComplete();
+        }
+      }
+    }, stepTime);
+  };
+
+  const startAmbient = async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    stopFade();
+
+    audio.volume = 0;
+
+    try {
+      await audio.play();
+
+      setMusicOn(true);
+      setAutoplayBlocked(false);
+
+      fadeTo(0.10, 2000);
+    } catch (error) {
+      setMusicOn(false);
+      setAutoplayBlocked(true);
+    }
+  };
+
+  const stopAmbient = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    fadeTo(0, 900, () => {
+      audio.pause();
+      setMusicOn(false);
+    });
+  };
+
+  const toggleAmbient = () => {
+    if (musicOn) {
+      stopAmbient();
+    } else {
+      startAmbient();
+    }
+  };
+
+  useEffect(() => {
+    startAmbient();
+
+    return () => {
+      stopFade();
+
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+    };
+  }, []);
   return (
     <div className="min-h-screen bg-gradient-to-b from-navy via-navy-royal to-black text-slate-100">
       {/* Top navigation / logo bar */}
+	  <audio
+  ref={audioRef}
+  src={ambientMusic}
+  loop
+  preload="auto"
+/>
       <header className="border-b border-slate-800/60 bg-black/60 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6">
           <div className="flex items-center gap-3">
@@ -31,11 +132,72 @@ const App = () => {
             </div>
           </div>
 
-          <nav className="hidden gap-6 text-xs md:flex">
-            <span className="text-slate-400">Digital Dentistry</span>
-            <span className="text-slate-400">Dental CAD</span>
-            <span className="text-slate-400">Education</span>
-          </nav>
+          <div className="flex items-center gap-5">
+  <nav className="hidden gap-6 text-xs md:flex">
+    <span className="text-slate-400">Digital Dentistry</span>
+    <span className="text-slate-400">Dental CAD</span>
+    <span className="text-slate-400">Education</span>
+  </nav>
+
+  <button
+    type="button"
+    onClick={toggleAmbient}
+    aria-label={musicOn ? "Turn ambient music off" : "Turn ambient music on"}
+    className={`group flex items-center gap-2 rounded-xl border px-3 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.16em] transition duration-300 ${
+      musicOn
+        ? "border-cyan-300/60 bg-cyan-950/30 text-cyan-200 shadow-[0_0_24px_rgba(34,211,238,0.22)]"
+        : "border-slate-700 bg-slate-950/60 text-slate-400 hover:border-slate-500 hover:text-slate-200"
+    }`}
+  >
+    <span className="flex h-4 items-end gap-[2px]">
+      <span
+        className={`w-[2px] rounded-full bg-current transition-all ${
+          musicOn ? "h-3 animate-pulse" : "h-1"
+        }`}
+      />
+
+      <span
+        className={`w-[2px] rounded-full bg-current transition-all ${
+          musicOn
+            ? "h-4 animate-pulse [animation-delay:140ms]"
+            : "h-2"
+        }`}
+      />
+
+      <span
+        className={`w-[2px] rounded-full bg-current transition-all ${
+          musicOn
+            ? "h-2 animate-pulse [animation-delay:280ms]"
+            : "h-1"
+        }`}
+      />
+
+      <span
+        className={`w-[2px] rounded-full bg-current transition-all ${
+          musicOn
+            ? "h-3 animate-pulse [animation-delay:420ms]"
+            : "h-2"
+        }`}
+      />
+
+      <span
+        className={`w-[2px] rounded-full bg-current transition-all ${
+          musicOn
+            ? "h-4 animate-pulse [animation-delay:560ms]"
+            : "h-1"
+        }`}
+      />
+    </span>
+
+    <span>
+      {musicOn
+        ? "Ambient On"
+        : autoplayBlocked
+          ? "Tap for Sound"
+          : "Ambient Off"}
+    </span>
+  </button>
+</div>
         </div>
       </header>
 	  {/* FAAT3D special screening */}
