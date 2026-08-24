@@ -4,6 +4,7 @@ import React from "react";
 import cadaonLogo from "./assets/cadaon-logo-827.png";
 import cadaonWallpaper from "./assets/cadaon-wallpaper-3200.png";
 import cadaonLoop from "./assets/cadaon-loop.mp4";
+import faat3dPromo from "./assets/FAAT3D_Proverzis_LT_promo3.jpg";
 
 const App = () => {
   return (
@@ -37,111 +38,164 @@ const App = () => {
           </nav>
         </div>
       </header>
-	<section className="mx-auto max-w-6xl px-4 py-10 md:px-6">
-	<div className="grid gap-8 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:items-center">
-  <div className="overflow-hidden rounded-3xl border border-slate-800/80 bg-slate-950/60 shadow-xl shadow-black/70">
-    <img
-      src={overhaulImage}
-      alt="CADAON overhaul in progress"
-      className="w-full object-cover"
-    />
-  </div>
+	  {/* FAAT3D special screening */}
+<section className="relative overflow-hidden border-b border-cyan-400/20 bg-slate-950/80">
+  {/* Soft pulsing glow */}
+  <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/50 blur-3xl animate-pulse" />
 
-  <div className="rounded-3xl border border-slate-800/80 bg-slate-950/70 p-6 shadow-xl shadow-black/60">
-    <div className="mb-6">
-      <div className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-accent-gold">
-        🇬🇧 Platform Update
-      </div>
-      <h2 className="mb-3 text-2xl font-semibold text-slate-100">
-        Overhaul in Progress
-      </h2>
-      <p className="mb-3 text-sm text-slate-300">
-        We're currently restructuring our membership tiers, content organization, and platform infrastructure.
-      </p>
-      <p className="mb-3 text-sm text-slate-300">
-        Some features, files, and resources may be temporarily unavailable while new data is being uploaded and synchronized.
-      </p>
-      <p className="mb-3 text-sm font-semibold text-accent-gold">
-        Overhauled tiers are coming before July 4th.
-      </p>
-      <p className="text-sm text-slate-400">
-        Thank you for your patience.
-      </p>
-    </div>
+  <div className="relative mx-auto max-w-6xl px-4 py-10 md:px-6">
+    <div className="grid gap-8 overflow-hidden rounded-3xl border border-cyan-300/30 bg-slate-950/80 shadow-[0_0_70px_rgba(34,211,238,0.25)] md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:items-center">
 
-    <div className="border-t border-slate-800 pt-6">
-      <div className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-accent-gold">
-        🇱🇹 Platformos atnaujinimas
-      </div>
-      <h2 className="mb-3 text-2xl font-semibold text-slate-100">
-        Vyksta restruktūrizacija
-      </h2>
-      <p className="mb-3 text-sm text-slate-300">
-        Šiuo metu pertvarkome narystės planus, turinio struktūrą ir platformos infrastruktūrą.
-      </p>
-      <p className="mb-3 text-sm text-slate-300">
-        Dalis funkcijų, failų ar resursų gali būti laikinai nepasiekiami, kol vyksta naujų duomenų įkėlimas ir sinchronizacija.
-      </p>
-      <p className="mb-3 text-sm font-semibold text-accent-gold">
-        Atnaujinti narystės planai: iki liepos 4 d.
-      </p>
-      <p className="text-sm text-slate-400">
-        Ačiū už kantrybę.
-      </p>
-	 </div>
-	</div>
-  </div>
-</section>
-{/* FAAT3D feature */}
-<section className="border-b border-slate-800/80 bg-black/60">
-  <div className="mx-auto max-w-6xl px-4 py-10 md:px-6">
-    <div className="grid gap-8 overflow-hidden rounded-3xl border border-slate-800/80 bg-slate-950/70 shadow-xl shadow-black/70 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:items-center">
+      {/* Promo image */}
       <div className="overflow-hidden">
         <img
-          src={faat3dCover}
-			alt="FAAT3D: Proveržis"
-			className="h-full w-full object-cover"
+          src={faat3dPromo}
+          alt="FAAT3D: The Leap screening"
+          className="h-full w-full object-cover"
         />
       </div>
 
+      {/* Event information */}
       <div className="p-6 md:p-8">
-        <div className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-accent-gold">
-          Special Project
+        <div className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300">
+          Special Screening · Kaunas
         </div>
 
-        <h2 className="mb-4 text-3xl font-semibold tracking-tight text-slate-100 md:text-4xl">
+        <h2 className="mb-1 text-3xl font-semibold tracking-tight text-slate-100 md:text-4xl">
           FAAT3D:{" "}
-          <span className="bg-gradient-to-r from-accent-gold via-amber-300 to-accent-redhot bg-clip-text text-transparent">
-            PROVERŽIS
+          <span className="bg-gradient-to-r from-cyan-300 via-sky-300 to-indigo-300 bg-clip-text text-transparent">
+            THE LEAP
           </span>
         </h2>
 
-        <p className="mb-4 text-sm text-slate-300 md:text-base">
-          Pilno metro techno-dokumentika apie skaitmeninės odontologijos transformaciją,
-          tikslumą, neapibrėžtumą ir 3D duomenų revoliuciją.
+        <div className="mb-5 text-sm font-medium uppercase tracking-[0.18em] text-slate-400">
+          FAAT3D: PROVERŽIS
+        </div>
+
+        <p className="mb-5 text-sm leading-relaxed text-slate-300 md:text-base">
+          A feature-length techno-documentary exploring precision, uncertainty,
+          and the accelerating transformation of digital dentistry.
         </p>
 
-        <p className="mb-4 text-sm text-slate-300 md:text-base">
-          Projektas skirtas odontologams, dantų technikams ir visiems, kuriuos
-          domina technologijų poveikis šiuolaikinei medicinai.
-        </p>
+        <div className="mb-5 rounded-2xl border border-cyan-300/20 bg-cyan-950/20 p-4">
+          <div className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">
+            Antrasis seansas
+          </div>
 
-        <p className="mb-6 text-xs uppercase tracking-[0.22em] text-slate-400">
-          Techno-documentary · Digital dentistry · Precision · Uncertainty
-        </p>
+          <div className="text-lg font-semibold text-slate-100">
+            2026 m. rugsėjo 11 d. · 20:00 val.
+          </div>
+
+          <div className="mt-1 text-sm text-slate-300">
+            Kino teatras „Romuva“ · Kamerinė salė · Kaunas
+          </div>
+
+          <div className="mt-2 text-sm text-slate-400">
+            Filmas ir renginys lietuvių kalba.
+          </div>
+        </div>
 
         <a
-          href="https://faat3d.com"
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center justify-center rounded-xl border border-accent-gold/80 bg-gradient-to-r from-accent-gold to-accent-redhot px-5 py-2 text-sm font-semibold text-black shadow-lg shadow-accent-redhot/40 transition hover:brightness-110"
-        >
-          Aplankyti FAAT3D.COM
-        </a>
+  href="https://faat3d.com"
+  target="_blank"
+  rel="noreferrer"
+  className="relative inline-flex overflow-visible items-center justify-center rounded-xl border border-orange-300/80 bg-gradient-to-r from-yellow-300 via-orange-400 to-red-500 px-5 py-2.5 text-sm font-bold text-black shadow-[0_0_30px_rgba(249,115,22,0.55)] transition duration-300 hover:brightness-110 hover:shadow-[0_0_50px_rgba(239,68,68,0.75)]"
+>
+  <span className="relative z-10">
+    Renginys ir bilietai → FAAT3D.COM
+  </span>
+
+  {/* Sparks */}
+  <span className="pointer-events-none absolute -left-1 -top-1 h-2 w-2 rounded-full bg-yellow-200 opacity-90 animate-ping" />
+
+  <span className="pointer-events-none absolute -right-1 top-1/3 h-1.5 w-1.5 rounded-full bg-orange-300 opacity-80 animate-ping [animation-delay:350ms]" />
+
+  <span className="pointer-events-none absolute -bottom-1 left-1/3 h-1.5 w-1.5 rounded-full bg-red-300 opacity-80 animate-ping [animation-delay:700ms]" />
+</a>
       </div>
     </div>
   </div>
 </section>
+<section className="mx-auto max-w-6xl px-4 py-10 md:px-6">
+  <div className="grid gap-8 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:items-center">
+
+    {/* Overhaul image */}
+    <div className="overflow-hidden rounded-3xl border border-slate-800/80 bg-slate-950/60 shadow-xl shadow-black/70">
+      <img
+        src={overhaulImage}
+        alt="CADAON overhaul in progress"
+        className="w-full object-cover"
+      />
+    </div>
+
+    {/* Overhaul text */}
+    <div className="rounded-3xl border border-slate-800/80 bg-slate-950/70 p-6 shadow-xl shadow-black/60">
+
+      {/* English */}
+      <div className="mb-6">
+        <div className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-accent-gold">
+          🇬🇧 Platform Update
+        </div>
+
+        <h2 className="mb-3 text-2xl font-semibold text-slate-100">
+          Overhaul Delayed
+        </h2>
+
+        <p className="mb-3 text-sm text-slate-300">
+          The CADAON platform overhaul is taking longer than originally planned.
+        </p>
+
+        <p className="mb-3 text-sm text-slate-300">
+          Legacy <strong>Blenderfordental 3.6.5</strong> training, the latest{" "}
+          <strong>Blenderfordental 4.5 with iBar 2.0</strong>, and{" "}
+          <strong>Exocad 3.3</strong> lessons are currently being assembled and
+          prepared in both Lithuanian and English.
+        </p>
+
+        <p className="mb-3 text-sm font-semibold text-accent-gold">
+          First releases are planned for October 2026.
+        </p>
+
+        <p className="text-sm text-slate-400">
+          Thank you for your patience.
+        </p>
+      </div>
+
+      {/* Lithuanian */}
+      <div className="border-t border-slate-800 pt-6">
+        <div className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-accent-gold">
+          🇱🇹 Platformos atnaujinimas
+        </div>
+
+        <h2 className="mb-3 text-2xl font-semibold text-slate-100">
+          Restruktūrizacija užtruko
+        </h2>
+
+        <p className="mb-3 text-sm text-slate-300">
+          CADAON platformos atnaujinimas užtrunka ilgiau, nei buvo planuota.
+        </p>
+
+        <p className="mb-3 text-sm text-slate-300">
+          Šiuo metu ruošiama ir sisteminama mokomoji medžiaga: ankstesnės{" "}
+          <strong>Blenderfordental 3.6.5</strong> versijos mokymai, naujausia{" "}
+          <strong>Blenderfordental 4.5 su iBar 2.0</strong>, taip pat{" "}
+          <strong>Exocad 3.3</strong> pamokos lietuvių ir anglų kalbomis.
+        </p>
+
+        <p className="mb-3 text-sm font-semibold text-accent-gold">
+          Pirmieji atnaujintos mokomosios medžiagos leidimai planuojami 2026 m. spalį.
+        </p>
+
+        <p className="text-sm text-slate-400">
+          Ačiū už kantrybę.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{/* FAAT3D feature */}
       {/* Main content */}
       <main className="mx-auto flex max-w-6xl flex-col gap-16 px-4 py-10 md:px-6 md:py-16">
         {/* Hero section */}
